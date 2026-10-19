@@ -3,672 +3,664 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+  <title>Paul Joshua Carreon — IT Specialist & Web Developer</title>
+  <meta name="description" content="Paul Joshua Carreon — IT Specialist and Web Developer based in Taguig, Philippines. Technical support, IT infrastructure, WordPress, AWS hosting and modern front-end development." />
+  <meta name="theme-color" content="#050609" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Paul Joshua Carreon — IT Specialist & Web Developer" />
+  <meta property="og:description" content="I keep systems running and build clean, fast web experiences." />
+  <meta property="og:image" content="https://pauljoshua0603.github.io/My-Portfolio/images/opt/og.jpg" />
+  <meta property="og:url" content="https://pauljoshua0603.github.io/My-Portfolio/" />
+
+  <script>document.documentElement.classList.add('js');</script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Google+Sans+Code:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  
-  <link rel="icon" type="image/png" href="./images/my_logo.png?v=1">
+
+  <link rel="icon" type="image/png" href="images/opt/favicon-32.png">
+  <link rel="apple-touch-icon" href="images/opt/apple-touch-icon.png">
+  <link rel="preload" as="image" href="images/opt/profile-cutout.webp">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- PRELOADER -->
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <p class="preloader__name"><span><span>Paul Joshua</span></span> <span><span>Carreon</span></span></p>
+      <p class="preloader__role">IT Specialist / Web Developer</p>
+    </div>
+    <div class="preloader__count"><span id="loaderCount">0</span>%</div>
+    <div class="preloader__bar"><span></span></div>
+  </div>
+
+  <div class="progress" aria-hidden="true"><span></span></div>
 
   <!-- HEADER -->
-  <header class="header">
-    <div class="container nav">
-      <a href="#hero" class="logo">Paul Carreon</a>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#hero" class="brand" aria-label="Paul Carreon — back to top">
+        <img src="images/opt/mark.png" alt="" width="40" height="40">
+        <span class="brand__text">Paul Carreon</span>
+      </a>
 
-      <nav class="nav-links" id="navLinks">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#contact">Contact</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#about" class="nav__link">About</a>
+        <a href="#skills" class="nav__link">Skills</a>
+        <a href="#experience" class="nav__link">Experience</a>
+        <a href="#projects" class="nav__link">Projects</a>
+        <a href="#credentials" class="nav__link">Credentials</a>
+        <a href="#contact" class="nav__link">Contact</a>
       </nav>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">☰</button>
+      <div class="header__actions">
+        <a href="Carreon - CV.pdf" class="btn btn--sm btn--ghost header__cv" download>
+          <span class="btn__roll">Résumé</span>
+          <i class="fa-solid fa-arrow-down"></i>
+        </a>
+        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+          <span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section id="hero" class="hero">
-    <div class="hero-bg"></div>
-
-    <div class="container hero-grid">
-      <div class="hero-text reveal">
-        <p class="eyebrow">HELLO, MY NAME IS</p>
-        <h1>Paul Joshua Carreon</h1>
-
-        <h2>
-          I’m a
-          <span class="typing-wrap">
-            <span id="typing"></span>
-          </span>
-        </h2>
-
-        <p class="hero-description">
-          I help teams keep systems running smoothly through technical support,
-          IT infrastructure assistance, troubleshooting, deployment, and practical web development.
-        </p>
-
-       <div class="hero-buttons">
-        <a href="#projects" class="btn btn-primary">View Projects</a>
-        <a href="Carreon - CV.pdf" class="btn btn-secondary" download>Download Resume</a>
-        </div>
-
-        <br> <br>
-
-        <div class="social-links">
-            <a href="https://pauljoshua0603.github.io/My-Portfolio/" target="_blank" class="social-link">
-                <i class="fab fa-github"></i>
-                <span>GitHub</span>
-            </a>
-
-            <a href="https://www.facebook.com/peejeey/" target="_blank" class="social-link">
-                <i class="fab fa-facebook-f"></i>
-                <span>Facebook</span>
-            </a>
-
-            <a href="https://www.linkedin.com/in/paul-carreon-859b672a2" target="_blank" class="social-link">
-                <i class="fab fa-linkedin-in"></i>
-                <span>LinkedIn</span>
-            </a>
-
-            <a href="mailto:carreonjoshua47@gmail.com" class="social-link">
-                <i class="fas fa-envelope"></i>
-                <span>Gmail</span>
-            </a>
-        </div>
-
-      </div>
-
-      <div class="hero-image reveal">
-        <div class="image-card">
-          <img src="images/profile.jpg" alt="Paul Joshua Carreon">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <div class="container about-grid">
-      <div class="section-heading reveal">
-        <p class="eyebrow">ABOUT ME</p>
-        <h3>Who I Am</h3>
-      </div>
-
-      <div class="about-content reveal">
-        <p>
-          I am an IT Specialist and Web Developer with experience in technical support,
-          device deployment, troubleshooting, preventive maintenance, and website management.
-        </p>
-
-        <p>
-          I enjoy working on systems, supporting users, solving technical issues,
-          and building clean, useful digital solutions.
-        </p>
-
-        <div class="about-info">
-          <div>
-            <span>Email</span>
-            <p><a href="mailto:carreonjoshua47@gmail.com">carreonjoshua47@gmail.com</a></p>
-          </div>
-          <div>
-            <span>Phone Number (Viber & WhatsApp)</span>
-            <p>0929 262 2094 / 0952 478 7998</p>
-          </div>
-          <div>
-            <span>Location</span>
-            <p>519 Mabolo St. Cembo Taguig City, Philippines</p>
-          </div>
-          <div>
-            <span>Languages</span>
-            <p>Filipino, English (Moderate)</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills" class="section section-dark">
-    <div class="container">
-      <div class="section-heading center reveal">
-        <p class="eyebrow">EXPERTISE</p>
-        <h3>What I Do</h3>
-      </div>
-
-      <div class="skills-grid">
-        <div class="skill-card reveal">Customer Engagement</div>
-        <div class="skill-card reveal">Technical Support</div>
-        <div class="skill-card reveal">Computer Software & Hardware Repair</div>
-        <div class="skill-card reveal">Preventive Maintenance</div>
-        <div class="skill-card reveal">LED Display Deployment</div>
-        <div class="skill-card reveal">Resolution Pixel Mapping</div>
-        <div class="skill-card reveal">Inventory Management</div>
-        <div class="skill-card reveal">Android & iOS, MAC Reprogramming</div>
-        <div class="skill-card reveal">Canva Graphics Designing</div>
-        <div class="skill-card reveal">Technical Troubleshooting</div>
-        <div class="skill-card reveal">Printer Setup & Diagnostic</div>
-        <div class="skill-card reveal">Remote User</div>
-        <div class="skill-card reveal">Website Developer</div>
-        <div class="skill-card reveal">Network (LAN,WAN, MKTG, IP) Setup</div>
-        <div class="skill-card reveal">PowerShell Scripting</div>
-        <div class="skill-card reveal">Antivirus & Cybersecurity</div>
-        <div class="skill-card reveal">Desktop, Laptop Diassembly & Assembly</div>
-        <div class="skill-card reveal">WordPress Management</div>
-        <div class="skill-card reveal">HTML, CSS, Tailwind CSS, JavaScript, JQueary</div>
-        <div class="skill-card reveal">AWS / Hosting Support</div>
-        <div class="skill-card reveal">EC2 / Project Management</div>
-        <div class="skill-card reveal">UI/UX Designer Front End</div>
-        <div class="skill-card reveal">Miro / Trello</div>
-      </div>
-    </div>
-  </section>
-
- <!-- EXPERIENCE -->
-<section id="experience" class="section">
-  <div class="container">
-    <div class="section-heading reveal">
-      <p class="eyebrow">EXPERIENCE</p>
-      <h3>Work Experience</h3>
-    </div>
-
-    <div class="timeline">
-
-      <div class="timeline-item reveal">
-        <div class="timeline-date">
-          <span class="timeline-period">June 2026 - Present</span>
-          <div class="timeline-logo">
-            <img src="images/realcog_logo.jpg" alt="Realcognita Logo">
-          </div>
-        </div>
-        <div class="timeline-content">
-          <h4 class="job-title">
-            Website Developer & Content Management System
-            <span class="job-tech">
-              <i class="fab fa-html5" title="HTML5"></i>
-              <i class="fab fa-css3-alt" title="CSS"></i>
-              <i class="fab fa-js" title="JavaScript"></i>
-              <i class="fab fa-aws" title="AWS"></i>
-              <i class="fab fa-git-alt" title="Git"></i>
-            </span>
-          </h4>
-          <p class="company">Realcognita</p>
-          <p>
-             High-performing digital experiences. Web & CMS Specialist experienced in end-to-end site management, front-end optimization, and intuitive user design
-          </p>
-        </div>
-      </div>
-
-      <div class="timeline-item reveal">
-        <div class="timeline-date">
-          <span class="timeline-period">Jan 2026 – Mar 2026</span>
-          <div class="timeline-logo">
-            <img src="images/ismile-logo.jpg" alt="iSmile Dental Home Logo">
-          </div>
-        </div>
-        <div class="timeline-content">
-          <h4 class="job-title">
-            WordPress Developer & Domain Deployment
-            <span class="job-tech">
-              <i class="fab fa-html5" title="HTML"></i>
-              <i class="fab fa-css3-alt" title="CSS"></i>
-              <i class="fab fa-js" title="JavaScript"></i>
-              <i class="fab fa-wordpress" title="WordPress"></i>
-              <i class="fab fa-aws" title="AWS"></i>
-            </span>
-          </h4>
-          <p class="company">iSmile Dental Home</p>
-          <p>
-            Worked on WordPress management, AWS hosting tasks, front-end page customization,
-            plugin setup, and website maintenance using HTML, CSS, JavaScript, and Elementor.
-          </p>
-        </div>
-      </div>
-
-      <div class="timeline-item reveal">
-        <div class="timeline-date">
-          <span class="timeline-period">Dec 2024 – Apr 2026</span>
-          <div class="timeline-logo">
-            <img src="images/logo_1.png" alt="Chiropractic First Logo">
-          </div>
-        </div>
-        <div class="timeline-content">
-          <h4 class="job-title">
-            IT Specialist
-            <span class="job-tech">
-              <i class="fab fa-microsoft" title="Microsoft 365"></i>
-              <i class="fab fa-google" title="Google Workspace"></i>
-              <i class="fas fa-desktop" title="Desktop Support"></i>
-              <i class="fas fa-print" title="Printer Support"></i>
-              <i class="fas fa-network-wired" title="Network"></i>
-            </span>
-          </h4>
-          <p class="company">CHIROPRACTIC FIRST (PH) OPC</p>
-          <p>
-            Provides technical support, hardware and software deployment, Microsoft 365 and Google Workspace support,
-            printer and network configuration, remote troubleshooting, LED mapping, and technical reporting.
-          </p>
-        </div>
-      </div>
-
-      <div class="timeline-item reveal">
-        <div class="timeline-date">
-          <span class="timeline-period">Aug 2024 – Oct 2024</span>
-          <div class="timeline-logo">
-            <img src="images/logo_2.png" alt="SAP Logo">
-          </div>
-        </div>
-        <div class="timeline-content">
-          <h4 class="job-title">
-            IT Support Engineer
-            <span class="job-tech">
-              <i class="fab fa-microsoft" title="Microsoft 365"></i>
-              <i class="fas fa-headset" title="Technical Support"></i>
-              <i class="fas fa-laptop-medical" title="Device Support"></i>
-              <i class="fas fa-print" title="Printer Setup"></i>
-              <i class="fas fa-screwdriver-wrench" title="Troubleshooting"></i>
-            </span>
-          </h4>
-          <p class="company">SAP</p>
-          <p>
-            Supported end-users using ServiceNow, Microsoft 365, reimaging, asset management,
-            printer driver setup, and remote desktop support.
-          </p>
-        </div>
-      </div>
-
-      <div class="timeline-item reveal">
-        <div class="timeline-date">
-          <span class="timeline-period">Feb 2024 – May 2024</span>
-          <div class="timeline-logo">
-            <img src="images/logo_3.jpg" alt="Inspiro Logo">
-          </div>
-        </div>
-        <div class="timeline-content">
-          <h4 class="job-title">
-            IT Technical Support (On The Job Training)
-            <span class="job-tech">
-              <i class="fas fa-computer" title="Computer Support"></i>
-              <i class="fas fa-tools" title="Troubleshooting"></i>
-              <i class="fas fa-ticket" title="Ticketing System"></i>
-              <i class="fas fa-shield-halved" title="IT Security"></i>
-              <i class="fas fa-microchip" title="Hardware"></i>
-            </span>
-          </h4>
-          <p class="company">Inspiro</p>
-          <p>
-            Assisted with diagnosing and resolving technical issues, improving device reliability
-            and supporting daily IT operations.
-          </p>
-        </div>
-      </div>
-
-      <div class="timeline-item reveal">
-        <div class="timeline-date">
-          <span class="timeline-period">Jan 2020 – Feb 2022</span>
-          <div class="timeline-logo">
-             <img src="images/logo_4.jpg" alt="AdvanceTech Logo">
-          </div>
-        </div>
-        <div class="timeline-content">
-          <h4 class="job-title">
-            Customer Service Representative (CSR)
-            <span class="job-tech">
-              <i class="fas fa-comments" title="Communication"></i>
-              <i class="fas fa-headset" title="Customer Service"></i>
-              <i class="fas fa-phone-volume" title="Customer Support"></i>
-              <i class="fas fa-user-check" title="Client Assistance"></i>
-              <i class="fas fa-file-lines" title="Documentation"></i>
-            </span>
-          </h4>
-          <p class="company">AdvTech</p>
-          <p>
-            Developed strong English communication skills and provided support for customer inquiries
-            and service-related concerns.
-          </p>
-        </div>
-      </div>
-
+  <!-- MOBILE MENU -->
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav class="menu__nav" aria-label="Mobile">
+      <a href="#about" class="menu__link">About</a>
+      <a href="#skills" class="menu__link">Skills</a>
+      <a href="#experience" class="menu__link">Experience</a>
+      <a href="#projects" class="menu__link">Projects</a>
+      <a href="#credentials" class="menu__link">Credentials</a>
+      <a href="#contact" class="menu__link">Contact</a>
+    </nav>
+    <div class="menu__foot">
+      <a href="mailto:carreonjoshua47@gmail.com">carreonjoshua47@gmail.com</a>
+      <a href="Carreon - CV.pdf" download>Download Résumé <i class="fa-solid fa-arrow-down"></i></a>
     </div>
   </div>
-</section>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="section section-dark">
-    <div class="container">
-      <div class="section-heading center reveal">
-        <p class="eyebrow">PROJECTS</p>
-        <h3>Featured Projects</h3>
-      </div>
+  <main id="main">
 
-      <div class="projects-grid">
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
 
-        <article class="project-card reveal">
-          <div class="project-image">
-            <img src="images/project_6.png" alt="PipelineHub">
-          </div>
-          <div class="project-content">
-            <h4>Human Resource Tracking Management System</h4>
-            <p>
-              Tracking Management System using Next.js, TypeScript, React, Tailwind CSS
-            </p>
-            <p class="stack">Next.js • TypeScript • React • Tailwind CSS • PostCSS • Supabase • Vercel • Node.js</p>
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <h1 class="hero__title" aria-label="Paul Joshua Carreon">
+            <span class="hero__line"><span class="hero__word" data-split>Paul Joshua</span></span>
+            <span class="hero__line"><span class="hero__word hero__word--accent" data-split>Carreon</span></span>
+          </h1>
 
-            <div class="project-buttons">
-              <a href="https://hr-tracking-six.vercel.app/" class="btn btn-small btn-primary">Live Demo</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="project-image">
-            <img src="images/project_5.webp" alt="Realcognita">
-          </div>
-          <div class="project-content">
-            <h4>Realcognita Expert Construction & Engineering Consulting</h4>
-            <p>
-              Website management and front-end development using HTML, CSS, JavaScript, AWS, Cloud
-            </p>
-            <p class="stack">HTML • CSS • JavaScript • AWS • Cloud</p>
-
-            <div class="project-buttons">
-              <a href="https://realcognita-web-dev.vercel.app/" class="btn btn-small btn-primary">Live Demo</a>
-            </div>
-          </div>
-        </article>
-        
-         <article class="project-card reveal">
-          <div class="project-image">
-            <img src="images/logo_5.png" alt="SudsUp Laundry Shop">
-          </div>
-          <div class="project-content">
-            <h4>Point of Sale / Laundry System</h4>
-            <p>
-              Website management and front-end development using HTML, CSS, JavaScript
-            </p>
-            <p class="stack">HTML • CSS • JavaScript • Netlify</p>
-
-            <div class="project-buttons">
-              <a href="https://lcldev-laundry-pos.netlify.app/" class="btn btn-small btn-primary">Live Demo</a>
-            </div>
-          </div>
-        </article>
-
-        
-        <article class="project-card reveal">
-          <div class="project-image">
-            <img src="images/project-1.jpg" alt="iSmile Dental Home">
-          </div>
-          <div class="project-content">
-            <h4>iSmile Dental Home</h4>
-            <p>
-              Website management and front-end development using WordPress, AWS, HTML, CSS, and JavaScript.
-            </p>
-            <p class="stack">WordPress • AWS • HTML • CSS • JavaScript</p>
-
-            <div class="project-buttons">
-              <a href="https://ismile.com.ph/" class="btn btn-small btn-primary">Live Demo</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="project-image">
-            <img src="images/project-2.jpg" alt="Academic Course Recommender System">
-          </div>
-          <div class="project-content">
-            <h4>Academic Course Recommender System</h4>
-            <p>
-              A Python and Django-based recommendation system with SQL database integration.
-            </p>
-            <p class="stack">Python • Django • SQL • HTML • CSS</p>
-          </div>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="project-image">
-            <img src="images/project-3.png" alt="Veterinary Appointment System">
-          </div>
-          <div class="project-content">
-            <h4>Veterinary Appointment System</h4>
-            <p>
-              An appointment and scheduling system developed for mobile clinic use.
-            </p>
-            <p class="stack">Android Studio • Mobile UI • Scheduling</p>
-          </div>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="project-image">
-            <img src="images/project-4.png" alt="Spine Clinic (PH)">
-          </div>
-          <div class="project-content">
-            <h4>Spine Clinic (PH)</h4>
-            <p>
-              Operations Service Desk Ticketing System
-            </p>
-            <p class="stack">HTML • CSS • JavaScript • Backend • Frontend</p>
-          </div>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="project-image">
-            <img src="images/school_3.png" alt="HSU Grading System">
-          </div>
-          <div class="project-content">
-            <h4>HSU Grading System for (Grade 11 & Grade 12)</h4>
-            <p>
-              A grading system that work in Visual Basic, Microsoft Access, Basic Computation for Professor
-            </p>
-            <p class="stack">Visual Studio • Visual Basic • Microsoft Access • Computer Programming</p>
-
-            <div class="project-buttons">
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-
-<!-- EDUCATION -->
-<section id="education" class="section">
-  <div class="container">
-    <div class="section-heading reveal">
-      <p class="eyebrow">EDUCATION</p>
-      <h3>Educational Background</h3>
-    </div>
-
-    <div class="education-list">
-      <div class="education-card reveal">
-        <div class="education-logo">
-          <img src="images/school_1.png" alt="University of Makati Logo">
-        </div>
-
-        <div class="education-content">
-          <h4 class="education-school">University of Makati</h4>
-          <p class="education-course">
-            Bachelor of Computer Science Major in Social Computing
-          </p>
-          <p class="education-date">2021 – 2024</p>
-          <p class="education-detail">
-            Completed 1st to 4th Year College with focus on programming, web development,
-            computer systems, and information technology fundamentals.
+          <p class="hero__role hero__fade">
+            <span class="hero__role-prefix">Your next</span>
+            <span class="rotator" aria-live="off">
+              <span class="rotator__item">IT Specialist</span>
+              <span class="rotator__item">Web Developer</span>
+              <span class="rotator__item">CMS Specialist</span>
+              <span class="rotator__item">Problem Solver</span>
+            </span>
           </p>
 
-          <div class="education-tags">
-            <span>Computer Science</span>
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-            <span>Computer Repair</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="education-card reveal">
-        <div class="education-logo">
-          <img src="images/school_2.jpeg" alt="AMA Computer College Pasig Logo">
-        </div>
-
-        <div class="education-content">
-          <h4 class="education-school">AMA Computer College Pasig</h4>
-          <p class="education-course">
-            Bachelor of Science in Computer Science
-          </p>
-          <p class="education-date">2019 – 2020</p>
-          <p class="education-detail">
-            Studied core computer science subjects including programming logic,
-            problem-solving, and introductory software development.
+          <p class="hero__desc hero__fade">
+            I keep systems running smoothly through technical support, IT infrastructure,
+            troubleshooting and deployment — and build clean, fast websites that people enjoy using.
           </p>
 
-          <div class="education-tags">
-            <span>Computer Science</span>
-            <span>JavaScript</span>
-            <span>Programming</span>
-            <span>Problem Solving</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="education-card reveal">
-        <div class="education-logo">
-          <img src="images/school_1.png" alt="University of Makati Logo">
-        </div>
-
-        <div class="education-content">
-          <h4 class="education-school">University of Makati</h4>
-          <p class="education-course">
-            Senior High School – TechVoc, Computer Programming
-          </p>
-          <p class="education-date">2017 – 2019</p>
-          <p class="education-detail">
-            Built foundational knowledge in computer programming, web basics,
-            and digital technology skills during Senior High School.
-          </p>
-
-          <div class="education-tags">
-            <span>Computer Programming</span>
-            <span>HTML</span>
-            <span>Basic Coding</span>
-            <span>TechVoc</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-
-<!-- CERTIFICATIONS -->
-<section id="certifications" class="section">
-  <div class="container">
-    <div class="section-heading reveal">
-      <p class="eyebrow">CERTIFICATIONS</p>
-      <h3>Licenses & Certifications</h3>
-    </div>
-
-    <div class="cert-grid">
-      <div class="cert-card reveal">
-        <div class="cert-image">
-          <img src="images/cert-4.png" alt="Introduction to Computers Certificate">
-        </div>
-        <h4>Introduction to Computers</h4>
-        <p>Coursera</p>
-        <p>Credential ID EEOWKR3VLGL8</p>
-        <span>2025</span>
-      </div>
-
-      <div class="cert-card reveal">
-        <div class="cert-image">
-          <img src="images/cert-6.png" alt="Pro-Active Customer Service Training Certificate">
-        </div>
-        <h4>Pro-Active Customer Service Training</h4>
-        <p>Strategic Networks, Inc.</p>
-        <span>2024</span>
-      </div>
-
-      <div class="cert-card reveal">
-        <div class="cert-image">
-          <img src="images/cert-3.png" alt="Information Security and Compliance Training Certificate">
-        </div>
-        <h4>Information Security and Compliance Training</h4>
-        <p>Strategic Networks, Inc.</p>
-        <span>2024</span>
-      </div>
-
-      <div class="cert-card reveal">
-        <div class="cert-image">
-          <img src="images/cert-2.png" alt="AI-ED Forum 2023 Certificate">
-        </div>
-        <h4>AI-ED Forum 2023</h4>
-        <p>University of Makati</p>
-        <span>2023</span>
-      </div>
-
-      <div class="cert-card reveal">
-        <div class="cert-image">
-          <img src="images/cert-1.png" alt="Foundations of Cybersecurity Certificate">
-        </div>
-        <h4>Foundations of Cybersecurity</h4>
-        <p>Kennesaw State University</p>
-        <p>Credential ID T72KHFU8VH58</p>
-        <span>2022</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section contact-section">
-    <div class="container contact-center reveal">
-      <p class="eyebrow">CONTACT ME</p>
-      <h3>Let’s Work Together</h3>
-      <p>
-        I’m open to IT support, technical support, web development, and other technology related opportunities.
-      </p>
-
-      <div class="social-links">
-            <a href="https://github.com/PaulJoshua0603/" target="_blank" class="social-link">
-                <i class="fab fa-github"></i>
-                <span>GitHub</span>
+          <div class="hero__cta hero__fade">
+            <a href="#projects" class="btn btn--primary">
+              <span class="btn__roll">View my work</span>
+              <i class="fa-solid fa-arrow-right"></i>
             </a>
-
-            <a href="https://www.facebook.com/peejeey/" target="_blank" class="social-link">
-                <i class="fab fa-facebook-f"></i>
-                <span>Facebook</span>
+            <a href="Carreon - CV.pdf" class="btn btn--ghost" download>
+              <span class="btn__roll">Download CV</span>
+              <i class="fa-solid fa-arrow-down"></i>
             </a>
+          </div>
 
-            <a href="https://www.linkedin.com/in/paul-joshua-carreon-859b672a2/" target="_blank" class="social-link">
-                <i class="fab fa-linkedin-in"></i>
-                <span>LinkedIn</span>
-            </a>
-
-            <a href="mailto:carreonjoshua47@gmail.com" class="social-link">
-                <i class="fas fa-envelope"></i>
-                <span>Gmail</span>
-            </a>
+          <ul class="socials hero__fade" aria-label="Social links">
+            <li><a href="https://www.linkedin.com/in/paul-carreon-859b672a2/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="https://github.com/PaulJoshua0603/" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://www.facebook.com/peejeey/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="mailto:carreonjoshua47@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a></li>
+          </ul>
         </div>
-    </div>
-  </section>
+
+        <div class="hero__visual">
+          <figure class="portrait">
+            <div class="portrait__frame">
+              <img src="images/opt/profile-cutout.webp" alt="Portrait of Paul Joshua Carreon" width="1400" height="1447" fetchpriority="high">
+            </div>
+          </figure>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-cue hero__fade" aria-label="Scroll to About">
+        <span class="scroll-cue__line"></span>
+      </a>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about">
+      <div class="container">
+        <h2 class="sr-only">About me</h2>
+        <p class="about__statement" data-scrub-text>
+          I’m an IT Specialist and Web Developer who keeps systems running and turns ideas into
+          clean, fast digital experiences — from hardware deployment, networks and end-user support
+          to WordPress, AWS hosting and modern front-end.
+        </p>
+
+        <div class="about__grid">
+          <div class="about__copy reveal">
+            <p>
+              My work sits where infrastructure meets the web. I’ve supported end-users across Makati, Ortigas and BGC,
+              administered Microsoft 365 and Google Workspace, configured networks and LED displays — and shipped websites
+              and web apps for clinics, consultancies and small businesses.
+            </p>
+            <p>
+              I care about reliable systems, happy users and interfaces that feel effortless.
+            </p>
+          </div>
+
+          <dl class="facts reveal">
+            <div class="facts__item">
+              <dt>Email</dt>
+              <dd><a href="mailto:carreonjoshua47@gmail.com" class="link">carreonjoshua47@gmail.com</a></dd>
+            </div>
+            <div class="facts__item">
+              <dt>Phone · Viber & WhatsApp</dt>
+              <dd>0929 262 2094 / 0952 478 7998</dd>
+            </div>
+            <div class="facts__item">
+              <dt>Location</dt>
+              <dd>Taguig City, Philippines</dd>
+            </div>
+            <div class="facts__item">
+              <dt>Languages</dt>
+              <dd>Filipino, English</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="stats">
+          <div class="stat reveal">
+            <p class="stat__num"><span data-count="4">4</span><sup>+</sup></p>
+            <p class="stat__label">Years of professional experience</p>
+          </div>
+          <div class="stat reveal">
+            <p class="stat__num"><span data-count="6">6</span></p>
+            <p class="stat__label">Companies & clients served</p>
+          </div>
+          <div class="stat reveal">
+            <p class="stat__num"><span data-count="8">8</span></p>
+            <p class="stat__label">Projects delivered</p>
+          </div>
+          <div class="stat reveal">
+            <p class="stat__num"><span data-count="5">5</span></p>
+            <p class="stat__label">Certifications earned</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section expertise">
+      <div class="container">
+        <header class="section-head section-head--split">
+          <h2 class="section-title" data-split-lines>What I bring to your team</h2>
+          <p class="section-lede reveal">Two disciplines, one mindset: make technology work for people — on the desk, on the network and on the web.</p>
+        </header>
+
+        <div class="services">
+          <article class="service reveal">
+            <span class="service__icon"><i class="fa-solid fa-headset"></i></span>
+            <h3>IT Support & Infrastructure</h3>
+            <p>End-user support, troubleshooting and IT operations — keeping people productive and systems healthy.</p>
+          </article>
+          <article class="service reveal">
+            <span class="service__icon"><i class="fa-solid fa-code"></i></span>
+            <h3>Web Development & CMS</h3>
+            <p>Responsive, fast websites and web apps — plus the CMS, SEO and content management that keep them alive.</p>
+          </article>
+          <article class="service reveal">
+            <span class="service__icon"><i class="fa-solid fa-cloud"></i></span>
+            <h3>Cloud, Hosting & Domains</h3>
+            <p>Deploying and maintaining sites on AWS and modern platforms — databases, domains, backups and uptime.</p>
+          </article>
+          <article class="service reveal">
+            <span class="service__icon"><i class="fa-solid fa-network-wired"></i></span>
+            <h3>Hardware, Network & Deployment</h3>
+            <p>Hands-on with the physical layer: builds, repairs, networks, printers and LED display deployments.</p>
+          </article>
+        </div>
+
+        <div class="skills">
+          <h3 class="skills__title reveal">Skills & tools</h3>
+
+          <div class="skills__row reveal">
+            <h4 class="skills__cat"><i class="fa-solid fa-headset"></i>IT Support & Systems</h4>
+            <ul class="skills__list">
+              <li>Technical Support</li><li>Troubleshooting</li><li>ServiceNow</li><li>Microsoft 365</li>
+              <li>Google Workspace</li><li>Remote Desktop Support</li><li>Re-imaging & Provisioning</li><li>Asset & Inventory Management</li>
+            </ul>
+          </div>
+
+          <div class="skills__row reveal">
+            <h4 class="skills__cat"><i class="fa-solid fa-code"></i>Web Development & CMS</h4>
+            <ul class="skills__list">
+              <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>jQuery</li><li>Tailwind CSS</li><li>React</li>
+              <li>Next.js</li><li>TypeScript</li><li>WordPress</li><li>Elementor</li><li>Yoast SEO</li><li>UI/UX Front-end</li>
+            </ul>
+          </div>
+
+          <div class="skills__row reveal">
+            <h4 class="skills__cat"><i class="fa-solid fa-cloud"></i>Cloud, Hosting & Data</h4>
+            <ul class="skills__list">
+              <li>AWS / EC2</li><li>AWS Hosting Panel</li><li>MySQL</li><li>Supabase</li><li>Hostinger</li>
+              <li>Vercel</li><li>Netlify</li><li>Git</li><li>JetBackup</li>
+            </ul>
+          </div>
+
+          <div class="skills__row reveal">
+            <h4 class="skills__cat"><i class="fa-solid fa-network-wired"></i>Network & Hardware</h4>
+            <ul class="skills__list">
+              <li>LAN / WAN / IP Setup</li><li>TP-Link Switches & Routers</li><li>Printer Setup & Diagnostics</li>
+              <li>Desktop & Laptop Assembly</li><li>Hardware & Software Repair</li><li>Preventive Maintenance</li>
+              <li>LED Display Deployment</li><li>Resolution Pixel Mapping</li>
+            </ul>
+          </div>
+
+          <div class="skills__row reveal">
+            <h4 class="skills__cat"><i class="fa-solid fa-shield-halved"></i>Security & Scripting</h4>
+            <ul class="skills__list">
+              <li>PowerShell Scripting</li><li>Antivirus & Cybersecurity</li><li>Android, iOS & Mac Reprogramming</li>
+              <li>Python / Django</li><li>Visual Basic</li>
+            </ul>
+          </div>
+
+          <div class="skills__row reveal">
+            <h4 class="skills__cat"><i class="fa-solid fa-pen-ruler"></i>Design & Collaboration</h4>
+            <ul class="skills__list">
+              <li>Canva Graphic Design</li><li>Miro</li><li>Trello</li><li>Project Management</li><li>Customer Engagement</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section experience">
+      <div class="container experience__inner">
+        <header class="experience__head">
+          <h2 class="section-title" data-split-lines>Where I’ve made an impact</h2>
+          <p class="section-lede reveal">From the service desk to the deployment pipeline — six teams, one constant: getting things working.</p>
+          <a href="Carreon - CV.pdf" class="btn btn--ghost reveal" download>
+            <span class="btn__roll">Full résumé (PDF)</span>
+            <i class="fa-solid fa-arrow-down"></i>
+          </a>
+        </header>
+
+        <ol class="timeline">
+          <li class="timeline__progress" aria-hidden="true"><span></span></li>
+
+          <li class="job">
+            <span class="job__dot" aria-hidden="true"></span>
+            <div class="job__card">
+              <div class="job__head">
+                <img src="images/opt/l-realcognita.webp" alt="Realcognita logo" width="56" height="56" loading="lazy">
+                <div>
+                  <p class="job__period">Jun 2026 — Present <span class="pill">Current</span></p>
+                  <h3 class="job__title">Website Developer & CMS Specialist</h3>
+                  <p class="job__company">Realcognita</p>
+                </div>
+              </div>
+              <ul class="job__points">
+                <li>End-to-end website and content management for an expert construction & engineering consultancy.</li>
+                <li>Front-end optimisation and intuitive user design for high-performing digital experiences.</li>
+                <li>Builds and deploys with HTML, CSS, JavaScript, Git and AWS cloud hosting.</li>
+              </ul>
+              <ul class="tags tags--sm"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>AWS</li><li>Git</li></ul>
+            </div>
+          </li>
+
+          <li class="job">
+            <span class="job__dot" aria-hidden="true"></span>
+            <div class="job__card">
+              <div class="job__head">
+                <img src="images/opt/l-ismile.webp" alt="iSmile Dental Home logo" width="56" height="56" loading="lazy">
+                <div>
+                  <p class="job__period">Jan 2026 — Mar 2026 <span class="pill pill--muted">Freelance</span></p>
+                  <h3 class="job__title">WordPress Developer & Domain Deployment</h3>
+                  <p class="job__company">iSmile Dental Home</p>
+                </div>
+              </div>
+              <ul class="job__points">
+                <li>Configured MySQL databases for WordPress and managed sites via the AWS hosting panel (websites & domains).</li>
+                <li>Managed WordPress with Elementor, Yoast SEO, Site Kit by Google, JetBackup and other plugins.</li>
+                <li>Developed and customised pages with HTML, CSS and JavaScript.</li>
+              </ul>
+              <ul class="tags tags--sm"><li>WordPress</li><li>AWS</li><li>MySQL</li><li>Hostinger</li><li>Elementor</li></ul>
+            </div>
+          </li>
+
+          <li class="job">
+            <span class="job__dot" aria-hidden="true"></span>
+            <div class="job__card">
+              <div class="job__head">
+                <img src="images/opt/l-chiro.webp" alt="Chiropractic First logo" width="56" height="56" loading="lazy">
+                <div>
+                  <p class="job__period">Dec 2024 — Apr 2026</p>
+                  <h3 class="job__title">IT Specialist</h3>
+                  <p class="job__company">Chiropractic First (PH) OPC</p>
+                </div>
+              </div>
+              <ul class="job__points">
+                <li>Maintained IT infrastructure: hardware/software deployment, reformatting, desktop assembly and remote support.</li>
+                <li>Administered Microsoft 365 and Google Workspace, managed IT inventory and prepared technical reports.</li>
+                <li>Configured printers, LAN/IP networks and TP-Link switches/routers; supported VPlex LED mapping and Android emulators.</li>
+              </ul>
+              <ul class="tags tags--sm"><li>Microsoft 365</li><li>Google Workspace</li><li>Networking</li><li>LED Mapping</li></ul>
+            </div>
+          </li>
+
+          <li class="job">
+            <span class="job__dot" aria-hidden="true"></span>
+            <div class="job__card">
+              <div class="job__head">
+                <img src="images/opt/l-sap.webp" alt="SAP logo" width="56" height="56" loading="lazy" class="is-wide">
+                <div>
+                  <p class="job__period">Aug 2024 — Oct 2024</p>
+                  <h3 class="job__title">IT Support Engineer</h3>
+                  <p class="job__company">SAP</p>
+                </div>
+              </div>
+              <ul class="job__points">
+                <li>Provided technical support to end-users across Makati, Ortigas and BGC.</li>
+                <li>Resolved incidents, service requests and walk-up appointments through ServiceNow.</li>
+                <li>Microsoft 365, remote desktop support, re-imaging/re-provisioning, printer drivers and asset management.</li>
+              </ul>
+              <ul class="tags tags--sm"><li>ServiceNow</li><li>Microsoft 365</li><li>Asset Management</li></ul>
+            </div>
+          </li>
+
+          <li class="job">
+            <span class="job__dot" aria-hidden="true"></span>
+            <div class="job__card">
+              <div class="job__head">
+                <img src="images/opt/l-inspiro.webp" alt="Inspiro logo" width="56" height="56" loading="lazy" class="is-wide">
+                <div>
+                  <p class="job__period">Feb 2024 — May 2024 <span class="pill pill--muted">OJT</span></p>
+                  <h3 class="job__title">IT Technical Support</h3>
+                  <p class="job__company">Inspiro</p>
+                </div>
+              </div>
+              <ul class="job__points">
+                <li>Kept computer equipment and peripherals working by diagnosing and resolving hardware and software problems.</li>
+                <li>Supported daily IT operations and improved device reliability.</li>
+              </ul>
+              <ul class="tags tags--sm"><li>Hardware</li><li>Ticketing</li><li>IT Security</li></ul>
+            </div>
+          </li>
+
+          <li class="job">
+            <span class="job__dot" aria-hidden="true"></span>
+            <div class="job__card">
+              <div class="job__head">
+                <img src="images/opt/l-advtech.webp" alt="AdvanceTech logo" width="56" height="56" loading="lazy">
+                <div>
+                  <p class="job__period">Jan 2020 — Feb 2022</p>
+                  <h3 class="job__title">Customer Service Representative</h3>
+                  <p class="job__company">AdvanceTech</p>
+                </div>
+              </div>
+              <ul class="job__points">
+                <li>Handled customer inquiries and service concerns, including courier delivery tracking and logs.</li>
+                <li>Built strong English communication and client-handling skills.</li>
+              </ul>
+              <ul class="tags tags--sm"><li>Communication</li><li>Customer Support</li><li>Documentation</li></ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="projects">
+      <div class="projects__pin">
+        <div class="container projects__head">
+          <h2 class="section-title" data-split-lines>Featured projects</h2>
+          <p class="projects__counter" aria-hidden="true"><span id="projCurrent">01</span> / <span>08</span></p>
+        </div>
+
+        <div class="projects__viewport">
+          <div class="projects__track">
+
+            <article class="project">
+              <a class="project__media" href="https://hr-admin-hub.vercel.app/" target="_blank" rel="noopener" style="--tint:#0c1714">
+                <img src="images/opt/p-hr-admin.webp" alt="HR Admin Hub sign-in screen" loading="lazy">
+              </a>
+              <div class="project__body">
+                <p class="project__meta">Web App</p>
+                <h3>HR Admin Hub — HR Tracking & Management System</h3>
+                <ul class="tags tags--sm"><li>Next.js</li><li>TypeScript</li><li>React</li><li>Tailwind</li><li>Supabase</li><li>Vercel</li></ul>
+                <a class="project__link" href="https://hr-admin-hub.vercel.app/" target="_blank" rel="noopener">Live demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              </div>
+            </article>
+
+            <article class="project">
+              <a class="project__media" href="https://www.realcognita.com/" target="_blank" rel="noopener">
+                <img src="images/opt/p-realcognita.webp" alt="Realcognita website preview" loading="lazy">
+              </a>
+              <div class="project__body">
+                <p class="project__meta">Corporate website</p>
+                <h3>Realcognita — Construction & Engineering Consulting</h3>
+                <ul class="tags tags--sm"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>AWS</li><li>Cloud</li></ul>
+                <a class="project__link" href="https://www.realcognita.com/" target="_blank" rel="noopener">Live site <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              </div>
+            </article>
+
+            <article class="project">
+              <a class="project__media" href="https://laundry-pos-drab.vercel.app/" target="_blank" rel="noopener" style="--tint:#1b0f3a">
+                <img src="images/opt/p-sudsup.webp" alt="SudsUp laundry point of sale" loading="lazy" class="is-logo">
+              </a>
+              <div class="project__body">
+                <p class="project__meta">POS system</p>
+                <h3>SudsUp — Laundry Point of Sale</h3>
+                <ul class="tags tags--sm"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Vercel</li></ul>
+                <a class="project__link" href="https://laundry-pos-drab.vercel.app/" target="_blank" rel="noopener">Live demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              </div>
+            </article>
+
+            <article class="project">
+              <a class="project__media" href="https://ismile.com.ph/" target="_blank" rel="noopener">
+                <img src="images/opt/p-ismile.webp" alt="iSmile Dental Home team" loading="lazy">
+              </a>
+              <div class="project__body">
+                <p class="project__meta">WordPress</p>
+                <h3>iSmile Dental Home</h3>
+                <ul class="tags tags--sm"><li>WordPress</li><li>AWS</li><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+                <a class="project__link" href="https://ismile.com.ph/" target="_blank" rel="noopener">Live site <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="project__media" style="--tint:#0a1024">
+                <img src="images/opt/p-course.webp" alt="Academic Course Recommender sign-in screen" loading="lazy">
+              </div>
+              <div class="project__body">
+                <p class="project__meta">Python / Django</p>
+                <h3>Academic Course Recommender System</h3>
+                <ul class="tags tags--sm"><li>Python</li><li>Django</li><li>SQL</li><li>HTML</li><li>CSS</li></ul>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="project__media" style="--tint:#e9f6fc">
+                <img src="images/opt/p-vet.webp" alt="Great & Small veterinary appointment app" loading="lazy" class="is-logo">
+              </div>
+              <div class="project__body">
+                <p class="project__meta">Mobile app</p>
+                <h3>Veterinary Appointment System</h3>
+                <ul class="tags tags--sm"><li>Android Studio</li><li>Mobile UI</li><li>Scheduling</li></ul>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="project__media" style="--tint:#fcecec">
+                <img src="images/opt/p-spine.webp" alt="Spine Clinic service desk ticketing system" loading="lazy" class="is-logo">
+              </div>
+              <div class="project__body">
+                <p class="project__meta">Ticketing system</p>
+                <h3>Spine Clinic (PH) — Service Desk Ticketing</h3>
+                <ul class="tags tags--sm"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Full-stack</li></ul>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="project__media" style="--tint:#0f2b6b">
+                <img src="images/opt/p-hsu.webp" alt="Higher School ng UMak logo" loading="lazy" class="is-logo">
+              </div>
+              <div class="project__body">
+                <p class="project__meta">Desktop app</p>
+                <h3>HSU Grading System (Grades 11 & 12)</h3>
+                <ul class="tags tags--sm"><li>Visual Basic</li><li>MS Access</li><li>Visual Studio</li></ul>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREDENTIALS -->
+    <section id="credentials" class="section credentials">
+      <div class="container">
+        <header class="section-head section-head--split">
+          <h2 class="section-title" data-split-lines>Education & certifications</h2>
+          <p class="section-lede reveal">A Computer Science foundation, sharpened by hands-on training in security, support and service.</p>
+        </header>
+
+        <div class="edu">
+          <article class="edu__card reveal">
+            <img src="images/opt/l-umak.webp" alt="University of Makati logo" width="64" height="64" loading="lazy">
+            <p class="edu__date">2021 — 2024</p>
+            <h3>BS Computer Science, Major in Social Computing</h3>
+            <p class="edu__school">University of Makati</p>
+          </article>
+          <article class="edu__card reveal">
+            <img src="images/opt/l-ama.webp" alt="AMA Computer College logo" width="64" height="64" loading="lazy">
+            <p class="edu__date">2019 — 2020</p>
+            <h3>BS Computer Science</h3>
+            <p class="edu__school">AMA Computer College, Pasig</p>
+          </article>
+          <article class="edu__card reveal">
+            <img src="images/opt/l-umak.webp" alt="University of Makati logo" width="64" height="64" loading="lazy">
+            <p class="edu__date">2017 — 2019</p>
+            <h3>Senior High School — TechVoc, Computer Programming</h3>
+            <p class="edu__school">University of Makati</p>
+          </article>
+        </div>
+
+        <div class="certs">
+          <button class="cert reveal" data-full="images/opt/cert-1.webp">
+            <span class="cert__img"><img src="images/opt/cert-1.webp" alt="Foundations of Cybersecurity certificate" loading="lazy"></span>
+            <span class="cert__body">
+              <span class="cert__title">Foundations of Cybersecurity</span>
+              <span class="cert__meta">Kennesaw State University · 2022</span>
+              <span class="cert__id">ID T72KHFU8VH58</span>
+            </span>
+          </button>
+          <button class="cert reveal" data-full="images/opt/cert-4.webp">
+            <span class="cert__img"><img src="images/opt/cert-4.webp" alt="Introduction to Computers certificate" loading="lazy"></span>
+            <span class="cert__body">
+              <span class="cert__title">Introduction to Computers</span>
+              <span class="cert__meta">Coursera · 2025</span>
+              <span class="cert__id">ID EEOWKR3VLGL8</span>
+            </span>
+          </button>
+          <button class="cert reveal" data-full="images/opt/cert-3.webp">
+            <span class="cert__img"><img src="images/opt/cert-3.webp" alt="Information Security and Compliance Training certificate" loading="lazy"></span>
+            <span class="cert__body">
+              <span class="cert__title">Information Security & Compliance Training</span>
+              <span class="cert__meta">Strategic Networks, Inc. · 2024</span>
+            </span>
+          </button>
+          <button class="cert reveal" data-full="images/opt/cert-6.webp">
+            <span class="cert__img"><img src="images/opt/cert-6.webp" alt="Pro-Active Customer Service Training certificate" loading="lazy"></span>
+            <span class="cert__body">
+              <span class="cert__title">Pro-Active Customer Service Training</span>
+              <span class="cert__meta">Strategic Networks, Inc. · 2024</span>
+            </span>
+          </button>
+          <button class="cert reveal" data-full="images/opt/cert-2.webp">
+            <span class="cert__img"><img src="images/opt/cert-2.webp" alt="AI-ED Forum 2023 certificate" loading="lazy"></span>
+            <span class="cert__body">
+              <span class="cert__title">AI-ED Forum 2023</span>
+              <span class="cert__meta">University of Makati · 2023</span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="contact__glow" aria-hidden="true"></div>
+      <div class="container contact__inner">
+        <h2 class="contact__title" data-split-lines>Let’s build something <em>great</em> together.</h2>
+        <p class="contact__lede reveal">Open to IT support, technical support, web development and other technology roles — full-time, contract or freelance.</p>
+
+        <div class="contact__actions reveal">
+          <a href="mailto:carreonjoshua47@gmail.com" class="cta-circle">
+            <span>Get in<br>touch</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <div class="contact__links">
+            <button class="copy" id="copyEmail" data-email="carreonjoshua47@gmail.com">
+              <span class="copy__text">carreonjoshua47@gmail.com</span>
+              <span class="copy__icon"><i class="fa-regular fa-copy"></i></span>
+            </button>
+            <ul class="socials socials--row" aria-label="Social links">
+              <li><a href="https://www.linkedin.com/in/paul-carreon-859b672a2/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></a></li>
+              <li><a href="https://github.com/PaulJoshua0603/" target="_blank" rel="noopener"><i class="fab fa-github"></i><span>GitHub</span></a></li>
+              <li><a href="https://www.facebook.com/peejeey/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i><span>Facebook</span></a></li>
+              <li><a href="Carreon - CV.pdf" download><i class="fa-solid fa-file-arrow-down"></i><span>Résumé</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="container footer-content">
-      <p>© <span id="year"></span> Paul Joshua Carreon</p>
+    <div class="container">
+      <p class="footer__giant" aria-hidden="true">Paul Carreon</p>
+      <div class="footer__bar">
+        <p>© <span id="year"></span> Paul Joshua Carreon</p>
+        <p>Manila <span id="clock">--:--</span></p>
+        <a href="#hero" class="footer__top">Back to top <i class="fa-solid fa-arrow-up"></i></a>
+      </div>
     </div>
   </footer>
 
+  <!-- CERT LIGHTBOX -->
+  <dialog class="lightbox" id="lightbox" aria-label="Certificate preview">
+    <button class="lightbox__close" aria-label="Close preview"><i class="fa-solid fa-xmark"></i></button>
+    <img src="" alt="">
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
