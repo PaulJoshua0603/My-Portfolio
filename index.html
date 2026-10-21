@@ -27,14 +27,10 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- PRELOADER -->
+  <!-- INTRO: name builds in the centre, then flies into the hero title -->
   <div class="preloader" aria-hidden="true">
-    <div class="preloader__inner">
-      <p class="preloader__name"><span><span>Paul Joshua</span></span> <span><span>Carreon</span></span></p>
-      <p class="preloader__role">IT Specialist / Web Developer</p>
-    </div>
-    <div class="preloader__count"><span id="loaderCount">0</span>%</div>
-    <div class="preloader__bar"><span></span></div>
+    <div class="intro__bg"></div>
+    <div class="intro__bar"><span></span></div>
   </div>
 
   <div class="progress" aria-hidden="true"><span></span></div>
@@ -49,14 +45,18 @@
 
       <nav class="nav" aria-label="Primary">
         <a href="#about" class="nav__link">About</a>
+        <a href="#work" class="nav__link">Work</a>
         <a href="#skills" class="nav__link">Skills</a>
         <a href="#experience" class="nav__link">Experience</a>
-        <a href="#projects" class="nav__link">Projects</a>
         <a href="#credentials" class="nav__link">Credentials</a>
         <a href="#contact" class="nav__link">Contact</a>
       </nav>
 
       <div class="header__actions">
+        <button class="cmdk-trigger" id="cmdkOpen" aria-label="Open quick actions (Ctrl+K)">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <kbd id="cmdkKey">Ctrl K</kbd>
+        </button>
         <a href="Carreon - CV.pdf" class="btn btn--sm btn--ghost header__cv" download>
           <span class="btn__roll">Résumé</span>
           <i class="fa-solid fa-arrow-down"></i>
@@ -72,9 +72,9 @@
   <div class="menu" id="menu" aria-hidden="true">
     <nav class="menu__nav" aria-label="Mobile">
       <a href="#about" class="menu__link">About</a>
+      <a href="#work" class="menu__link">Work</a>
       <a href="#skills" class="menu__link">Skills</a>
       <a href="#experience" class="menu__link">Experience</a>
-      <a href="#projects" class="menu__link">Projects</a>
       <a href="#credentials" class="menu__link">Credentials</a>
       <a href="#contact" class="menu__link">Contact</a>
     </nav>
@@ -93,8 +93,8 @@
       <div class="container hero__inner">
         <div class="hero__text">
           <h1 class="hero__title" aria-label="Paul Joshua Carreon">
-            <span class="hero__line"><span class="hero__word" data-split>Paul Joshua</span></span>
-            <span class="hero__line"><span class="hero__word hero__word--accent" data-split>Carreon</span></span>
+            <span class="hero__line"><span class="hero__word">Paul Joshua</span></span>
+            <span class="hero__line"><span class="hero__word hero__word--accent">Carreon</span></span>
           </h1>
 
           <p class="hero__role hero__fade">
@@ -113,7 +113,7 @@
           </p>
 
           <div class="hero__cta hero__fade">
-            <a href="#projects" class="btn btn--primary">
+            <a href="#work" class="btn btn--primary">
               <span class="btn__roll">View my work</span>
               <i class="fa-solid fa-arrow-right"></i>
             </a>
@@ -204,6 +204,149 @@
             <p class="stat__num"><span data-count="5">5</span></p>
             <p class="stat__label">Certifications earned</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section id="work" class="work">
+      <div class="showcase">
+        <div class="container showcase__head">
+          <h2 class="section-title" data-split-lines>Selected work</h2>
+          <p class="section-lede reveal">Live websites and web apps I’ve built and deployed. Keep scrolling to take each one for a spin.</p>
+        </div>
+
+        <div class="container showcase__stage">
+          <div class="showcase__devices" aria-hidden="true">
+            <div class="laptop">
+              <div class="laptop__lid">
+                <div class="laptop__screen">
+                  <img class="screen" src="images/opt/screens/hr-desktop.webp" width="1280" height="800" alt="">
+                  <img class="screen" src="images/opt/screens/rc-desktop.webp" width="1280" height="3200" alt="" loading="lazy">
+                  <img class="screen" src="images/opt/screens/pos-desktop.webp" width="1280" height="800" alt="" loading="lazy">
+                  <img class="screen" src="images/opt/screens/ismile-desktop.webp" width="1280" height="3200" alt="" loading="lazy">
+                </div>
+              </div>
+              <div class="laptop__base"></div>
+            </div>
+            <div class="phone">
+              <div class="phone__screen">
+                <img class="screen" src="images/opt/screens/hr-mobile.webp" width="390" height="844" alt="">
+                <img class="screen" src="images/opt/screens/rc-mobile.webp" width="390" height="2600" alt="" loading="lazy">
+                <img class="screen" src="images/opt/screens/pos-mobile.webp" width="390" height="844" alt="" loading="lazy">
+                <img class="screen" src="images/opt/screens/ismile-mobile.webp" width="390" height="2600" alt="" loading="lazy">
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__list">
+            <article class="showcase__item">
+              <a class="showcase__thumb" href="https://hr-admin-hub.vercel.app/" target="_blank" rel="noopener" tabindex="-1">
+                <img src="images/opt/screens/hr-desktop.webp" width="1280" height="800" alt="HR Admin Hub website" loading="lazy">
+              </a>
+              <p class="project__meta">Web app</p>
+              <h3 class="showcase__title">HR Admin Hub</h3>
+              <p class="showcase__desc">HR tracking and management system that brings onboarding and daily HR operations into one calm workspace, with secure team sign-in.</p>
+              <ul class="tags tags--sm"><li>Next.js</li><li>TypeScript</li><li>React</li><li>Tailwind CSS</li><li>Supabase</li><li>Vercel</li></ul>
+              <a class="btn btn--sm btn--primary" href="https://hr-admin-hub.vercel.app/" target="_blank" rel="noopener">
+                <span class="btn__roll">Visit live site</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </article>
+
+            <article class="showcase__item">
+              <a class="showcase__thumb" href="https://www.realcognita.com/" target="_blank" rel="noopener" tabindex="-1">
+                <img src="images/opt/screens/rc-thumb.webp" width="1280" height="800" alt="Realcognita website" loading="lazy">
+              </a>
+              <p class="project__meta">Corporate website</p>
+              <h3 class="showcase__title">Realcognita</h3>
+              <p class="showcase__desc">Responsive, content-managed website for a construction and engineering consultancy, optimised for performance and hosted on AWS.</p>
+              <ul class="tags tags--sm"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>AWS</li><li>CMS</li></ul>
+              <a class="btn btn--sm btn--primary" href="https://www.realcognita.com/" target="_blank" rel="noopener">
+                <span class="btn__roll">Visit live site</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </article>
+
+            <article class="showcase__item">
+              <a class="showcase__thumb" href="https://laundry-pos-drab.vercel.app/" target="_blank" rel="noopener" tabindex="-1">
+                <img src="images/opt/screens/pos-desktop.webp" width="1280" height="800" alt="SudsUp — Laundry POS website" loading="lazy">
+              </a>
+              <p class="project__meta">POS system</p>
+              <h3 class="showcase__title">SudsUp — Laundry POS</h3>
+              <p class="showcase__desc">Point-of-sale web app for laundry shops with email and Google sign-in, built for quick day-to-day use at the counter.</p>
+              <ul class="tags tags--sm"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Vercel</li></ul>
+              <a class="btn btn--sm btn--primary" href="https://laundry-pos-drab.vercel.app/" target="_blank" rel="noopener">
+                <span class="btn__roll">Visit live site</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </article>
+
+            <article class="showcase__item">
+              <a class="showcase__thumb" href="https://ismile.com.ph/" target="_blank" rel="noopener" tabindex="-1">
+                <img src="images/opt/screens/ismile-thumb.webp" width="1280" height="800" alt="iSmile Dental Home website" loading="lazy">
+              </a>
+              <p class="project__meta">WordPress website</p>
+              <h3 class="showcase__title">iSmile Dental Home</h3>
+              <p class="showcase__desc">WordPress website for a dental clinic in Bonifacio Global City: Elementor pages, SEO setup, AWS hosting and domain deployment.</p>
+              <ul class="tags tags--sm"><li>WordPress</li><li>Elementor</li><li>Yoast SEO</li><li>AWS</li><li>MySQL</li></ul>
+              <a class="btn btn--sm btn--primary" href="https://ismile.com.ph/" target="_blank" rel="noopener">
+                <span class="btn__roll">Visit live site</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </article>
+
+            <div class="showcase__dots" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container more">
+        <h3 class="more__title reveal">More projects</h3>
+        <div class="more__grid">
+          <article class="project">
+            <div class="project__media" style="--tint:#0a1024">
+              <img src="images/opt/p-course.webp" alt="Academic Course Recommender sign-in screen" loading="lazy">
+            </div>
+            <div class="project__body">
+              <p class="project__meta">Python / Django</p>
+              <h3>Academic Course Recommender System</h3>
+              <ul class="tags tags--sm"><li>Python</li><li>Django</li><li>SQL</li><li>HTML</li><li>CSS</li></ul>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project__media" style="--tint:#e9f6fc">
+              <img src="images/opt/p-vet.webp" alt="Great & Small veterinary appointment app" loading="lazy" class="is-logo">
+            </div>
+            <div class="project__body">
+              <p class="project__meta">Mobile app</p>
+              <h3>Veterinary Appointment System</h3>
+              <ul class="tags tags--sm"><li>Android Studio</li><li>Mobile UI</li><li>Scheduling</li></ul>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project__media" style="--tint:#fcecec">
+              <img src="images/opt/p-spine.webp" alt="Spine Clinic service desk ticketing system" loading="lazy" class="is-logo">
+            </div>
+            <div class="project__body">
+              <p class="project__meta">Ticketing system</p>
+              <h3>Spine Clinic (PH) — Service Desk Ticketing</h3>
+              <ul class="tags tags--sm"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Full-stack</li></ul>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project__media" style="--tint:#0f2b6b">
+              <img src="images/opt/p-hsu.webp" alt="Higher School ng UMak logo" loading="lazy" class="is-logo">
+            </div>
+            <div class="project__body">
+              <p class="project__meta">Desktop app</p>
+              <h3>HSU Grading System (Grades 11 & 12)</h3>
+              <ul class="tags tags--sm"><li>Visual Basic</li><li>MS Access</li><li>Visual Studio</li></ul>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -429,114 +572,6 @@
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="projects">
-      <div class="projects__pin">
-        <div class="container projects__head">
-          <h2 class="section-title" data-split-lines>Featured projects</h2>
-          <p class="projects__counter" aria-hidden="true"><span id="projCurrent">01</span> / <span>08</span></p>
-        </div>
-
-        <div class="projects__viewport">
-          <div class="projects__track">
-
-            <article class="project">
-              <a class="project__media" href="https://hr-admin-hub.vercel.app/" target="_blank" rel="noopener" style="--tint:#0c1714">
-                <img src="images/opt/p-hr-admin.webp" alt="HR Admin Hub sign-in screen" loading="lazy">
-              </a>
-              <div class="project__body">
-                <p class="project__meta">Web App</p>
-                <h3>HR Admin Hub — HR Tracking & Management System</h3>
-                <ul class="tags tags--sm"><li>Next.js</li><li>TypeScript</li><li>React</li><li>Tailwind</li><li>Supabase</li><li>Vercel</li></ul>
-                <a class="project__link" href="https://hr-admin-hub.vercel.app/" target="_blank" rel="noopener">Live demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-              </div>
-            </article>
-
-            <article class="project">
-              <a class="project__media" href="https://www.realcognita.com/" target="_blank" rel="noopener">
-                <img src="images/opt/p-realcognita.webp" alt="Realcognita website preview" loading="lazy">
-              </a>
-              <div class="project__body">
-                <p class="project__meta">Corporate website</p>
-                <h3>Realcognita — Construction & Engineering Consulting</h3>
-                <ul class="tags tags--sm"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>AWS</li><li>Cloud</li></ul>
-                <a class="project__link" href="https://www.realcognita.com/" target="_blank" rel="noopener">Live site <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-              </div>
-            </article>
-
-            <article class="project">
-              <a class="project__media" href="https://laundry-pos-drab.vercel.app/" target="_blank" rel="noopener" style="--tint:#1b0f3a">
-                <img src="images/opt/p-sudsup.webp" alt="SudsUp laundry point of sale" loading="lazy" class="is-logo">
-              </a>
-              <div class="project__body">
-                <p class="project__meta">POS system</p>
-                <h3>SudsUp — Laundry Point of Sale</h3>
-                <ul class="tags tags--sm"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Vercel</li></ul>
-                <a class="project__link" href="https://laundry-pos-drab.vercel.app/" target="_blank" rel="noopener">Live demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-              </div>
-            </article>
-
-            <article class="project">
-              <a class="project__media" href="https://ismile.com.ph/" target="_blank" rel="noopener">
-                <img src="images/opt/p-ismile.webp" alt="iSmile Dental Home team" loading="lazy">
-              </a>
-              <div class="project__body">
-                <p class="project__meta">WordPress</p>
-                <h3>iSmile Dental Home</h3>
-                <ul class="tags tags--sm"><li>WordPress</li><li>AWS</li><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-                <a class="project__link" href="https://ismile.com.ph/" target="_blank" rel="noopener">Live site <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-              </div>
-            </article>
-
-            <article class="project">
-              <div class="project__media" style="--tint:#0a1024">
-                <img src="images/opt/p-course.webp" alt="Academic Course Recommender sign-in screen" loading="lazy">
-              </div>
-              <div class="project__body">
-                <p class="project__meta">Python / Django</p>
-                <h3>Academic Course Recommender System</h3>
-                <ul class="tags tags--sm"><li>Python</li><li>Django</li><li>SQL</li><li>HTML</li><li>CSS</li></ul>
-              </div>
-            </article>
-
-            <article class="project">
-              <div class="project__media" style="--tint:#e9f6fc">
-                <img src="images/opt/p-vet.webp" alt="Great & Small veterinary appointment app" loading="lazy" class="is-logo">
-              </div>
-              <div class="project__body">
-                <p class="project__meta">Mobile app</p>
-                <h3>Veterinary Appointment System</h3>
-                <ul class="tags tags--sm"><li>Android Studio</li><li>Mobile UI</li><li>Scheduling</li></ul>
-              </div>
-            </article>
-
-            <article class="project">
-              <div class="project__media" style="--tint:#fcecec">
-                <img src="images/opt/p-spine.webp" alt="Spine Clinic service desk ticketing system" loading="lazy" class="is-logo">
-              </div>
-              <div class="project__body">
-                <p class="project__meta">Ticketing system</p>
-                <h3>Spine Clinic (PH) — Service Desk Ticketing</h3>
-                <ul class="tags tags--sm"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Full-stack</li></ul>
-              </div>
-            </article>
-
-            <article class="project">
-              <div class="project__media" style="--tint:#0f2b6b">
-                <img src="images/opt/p-hsu.webp" alt="Higher School ng UMak logo" loading="lazy" class="is-logo">
-              </div>
-              <div class="project__body">
-                <p class="project__meta">Desktop app</p>
-                <h3>HSU Grading System (Grades 11 & 12)</h3>
-                <ul class="tags tags--sm"><li>Visual Basic</li><li>MS Access</li><li>Visual Studio</li></ul>
-              </div>
-            </article>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- CREDENTIALS -->
     <section id="credentials" class="section credentials">
       <div class="container">
@@ -648,6 +683,21 @@
       </div>
     </div>
   </footer>
+
+  <!-- QUICK ACTIONS (Ctrl/Cmd + K) -->
+  <dialog class="cmdk" id="cmdk" aria-label="Quick actions">
+    <div class="cmdk__search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input id="cmdkInput" type="text" placeholder="Search sections, projects and actions…" autocomplete="off" spellcheck="false"
+             role="combobox" aria-expanded="true" aria-controls="cmdkList" aria-autocomplete="list">
+      <kbd>Esc</kbd>
+    </div>
+    <div class="cmdk__list" id="cmdkList" role="listbox" aria-label="Results" data-lenis-prevent></div>
+    <div class="cmdk__foot">
+      <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+      <span><kbd>↵</kbd> select</span>
+    </div>
+  </dialog>
 
   <!-- CERT LIGHTBOX -->
   <dialog class="lightbox" id="lightbox" aria-label="Certificate preview">
