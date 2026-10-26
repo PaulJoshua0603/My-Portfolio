@@ -4,11 +4,11 @@
   const root = document.documentElement;
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // ---------- Footer year + Manila clock ----------
+  // ---------- Footer year + Manila clocks ----------
   $("#year").textContent = new Date().getFullYear();
-  const clock = $("#clock");
+  const clocks = $$("[data-clock]");
   const fmt = new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Manila", hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: true });
-  const tick = () => (clock.textContent = fmt.format(new Date()));
+  const tick = () => clocks.forEach((c) => (c.textContent = fmt.format(new Date())));
   tick();
   setInterval(tick, 1000);
 
@@ -244,9 +244,14 @@
           .fromTo(phone, { yPercent: 30, autoAlpha: 0 }, { yPercent: 0, autoAlpha: 1, duration: 0.7, ease: "power2.out" }, 0.4);
 
         // each project: wipe in its screens, swap the copy, then scroll the site inside the screens
+        const desktopOnly = (k) => items[k].hasAttribute("data-desktop-only");
         items.forEach((item, i) => {
           const at = 1 + i * 2;
           if (i > 0) {
+            // the phone steps aside for desktop-only apps
+            if (desktopOnly(i) !== desktopOnly(i - 1)) {
+              tl.to(phone, { autoAlpha: desktopOnly(i) ? 0 : 1, yPercent: desktopOnly(i) ? 20 : 0, duration: 0.5, ease: "power2.inOut" }, at);
+            }
             tl.to(screensL[i], { clipPath: "inset(0% 0% 0% 0%)", duration: 0.6, ease: "power2.inOut" }, at)
               .to(screensP[i], { clipPath: "inset(0% 0% 0% 0%)", duration: 0.6, ease: "power2.inOut" }, at + 0.08)
               .to(items[i - 1], { autoAlpha: 0, y: -24, duration: 0.3 }, at)
@@ -288,7 +293,7 @@
     $$("[data-split-lines]").forEach((el) => {
       SplitText.create(el, {
         type: "lines",
-        linesClass: "split-line",
+        linesClass: "sline", // mask wrapper becomes .sline-mask (SplitText suffixes every word of the class)
         mask: "lines",
         autoSplit: true,
         onSplit: (self) =>
@@ -364,6 +369,23 @@
   };
   $("#copyEmail").addEventListener("click", copyEmail);
 
+  // ---------- Quick message: opens a ready-to-send email or WhatsApp chat ----------
+  const WHATSAPP = "639292622094";
+  $("#composer").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const f = new FormData(e.currentTarget);
+    const topic = f.get("topic");
+    const name = f.get("name").trim();
+    const company = f.get("company").trim();
+    const from = company ? `${name}, ${company}` : name;
+    const body = `Hi Paul,\n\n${f.get("message").trim()}\n\n— ${from}`;
+    if (e.submitter?.value === "whatsapp") {
+      window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(`[${topic}] ${body}`)}`, "_blank", "noopener");
+    } else {
+      window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(`${topic} — ${from}`)}&body=${encodeURIComponent(body)}`;
+    }
+  });
+
   // ---------- Quick actions (Ctrl/Cmd + K, or "/") ----------
   const cmdk = $("#cmdk");
   const cmdkInput = $("#cmdkInput");
@@ -385,7 +407,9 @@
     ["Actions", "fa-solid fa-file-arrow-down", "Download résumé (PDF)", () => $(".header__cv").click()],
     ["Actions", "fa-solid fa-envelope", "Send me an email", () => (window.location.href = `mailto:${EMAIL}`)],
     ["Live projects", "fa-solid fa-arrow-up-right-from-square", "HR Admin Hub", openUrl("https://hr-admin-hub.vercel.app/"), "hr-admin-hub.vercel.app"],
+    ["Live projects", "fa-solid fa-arrow-up-right-from-square", "201 File Sorter", openUrl("https://sorter201.vercel.app/"), "sorter201.vercel.app"],
     ["Live projects", "fa-solid fa-arrow-up-right-from-square", "Realcognita", openUrl("https://www.realcognita.com/"), "realcognita.com"],
+    ["Live projects", "fa-solid fa-arrow-up-right-from-square", "Realforma (in development)", openUrl("http://realforma-stg.realcognita.com/"), "realforma-stg.realcognita.com"],
     ["Live projects", "fa-solid fa-arrow-up-right-from-square", "SudsUp — Laundry POS", openUrl("https://laundry-pos-drab.vercel.app/"), "laundry-pos-drab.vercel.app"],
     ["Live projects", "fa-solid fa-arrow-up-right-from-square", "iSmile Dental Home", openUrl("https://ismile.com.ph/"), "ismile.com.ph"],
     ["Profiles", "fab fa-linkedin-in", "LinkedIn", openUrl("https://www.linkedin.com/in/paul-carreon-859b672a2/")],
