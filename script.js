@@ -130,6 +130,9 @@
 
   const startSite = () => {
     lenis?.start();
+    // deep link (e.g. /#contact): the intro starts at the top, so go there afterwards
+    const target = location.hash.length > 1 && document.querySelector(location.hash);
+    if (target) scrollToTarget(target);
     gsap.delayedCall(2.4, nextRole);
   };
 

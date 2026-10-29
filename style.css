@@ -27,7 +27,7 @@
   --radius: 22px;
   --header-h: 76px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --section-y: clamp(96px, 13vw, 180px);
+  --section-y: clamp(72px, 11vw, 160px);
 }
 
 *,
@@ -753,6 +753,23 @@ kbd {
   .timeline { padding-left: 34px; }
   .job__dot { left: -30px; }
   .lightbox__close { top: -54px; right: 0; }
+}
+
+/* Touch screens: finger-sized tap areas */
+@media (pointer: coarse) {
+  .card-contact__list a, .facts a, .footer__top { display: inline-block; padding-block: 10px; }
+  .copy { padding-block: 10px; }
+  .scroll-cue { padding: 8px 18px; }
+}
+
+/* Phones/tablets: skip costly blur on big cards for smoother scrolling */
+@media (max-width: 768px) {
+  .composer, .card-contact { -webkit-backdrop-filter: none; backdrop-filter: none; background: var(--surface); }
+  .about__grid { margin-top: 40px; }
+  .stats { margin-top: 48px; }
+  .skills { margin-top: 56px; }
+  .more { padding-top: 56px; }
+  .section-head { margin-bottom: 32px; }
 }
 
 /* Reduced motion */
