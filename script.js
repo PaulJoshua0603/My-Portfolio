@@ -35,7 +35,7 @@
 
   const scrollToTarget = (target) => {
     if (lenis) return lenis.scrollTo(target, { duration: 1.4, easing: (t) => 1 - Math.pow(1 - t, 4) });
-    if (target === 0) return window.scrollTo({ top: 0 });
+    if (typeof target === "number") return window.scrollTo({ top: target });
     target.scrollIntoView();
   };
 
@@ -192,6 +192,7 @@
     // copy has landed on the real title: swap them
     gsap.set(title, { autoAlpha: 1 });
     preloader.remove();
+    ScrollTrigger.refresh(); // re-measure pins now that the page is settled
     startSite();
   };
   runIntro();
@@ -216,7 +217,7 @@
         const screensL = $$(".screen", boxL);
         const screensP = $$(".screen", boxP);
         const items = $$(".showcase__item");
-        const dots = $$(".showcase__dots span");
+        const nav = $(".showcase__nav");
         section.classList.add("is-pinned");
 
         gsap.set(items.slice(1), { autoAlpha: 0 });
@@ -224,7 +225,22 @@
         // how far a full-page screenshot must travel to reach its bottom
         const travel = (img, box) => () => -Math.max(0, img.offsetHeight - box.offsetHeight);
         const starts = items.map((_, i) => (i === 0 ? 0 : 1 + i * 2));
-        const setActive = (i) => dots.forEach((d, k) => d.classList.toggle("is-active", k === i));
+        // clickable project chips: show all projects and jump straight to one
+        nav.replaceChildren(...items.map((item, i) => {
+          const b = document.createElement("button");
+          b.type = "button";
+          b.textContent = $(".showcase__title", item).textContent.split(" — ")[0];
+          b.addEventListener("click", () => {
+            const st = tl.scrollTrigger;
+            scrollToTarget(st.start + ((Math.max(starts[i], 1) + 0.5) / tl.duration()) * (st.end - st.start));
+          });
+          return b;
+        }));
+        const chips = [...nav.children];
+        const setActive = (i) => chips.forEach((b, k) => {
+          b.classList.toggle("is-active", k === i);
+          b.setAttribute("aria-current", k === i);
+        });
         setActive(0);
 
         const tl = gsap.timeline({
@@ -232,11 +248,12 @@
           scrollTrigger: {
             trigger: section,
             start: "top top",
-            end: () => "+=" + window.innerHeight * (items.length + 1),
+            end: () => "+=" + window.innerHeight * items.length * 0.9,
             pin: true,
             scrub: 0.8,
             refreshPriority: 1,
             invalidateOnRefresh: true,
+            anticipatePin: 1,
             onUpdate: () => setActive(starts.findLastIndex((t) => tl.time() >= t)),
           },
         });
@@ -528,4 +545,7 @@
   // Recalculate once images have settled
   const refresh = () => { ScrollTrigger.sort(); ScrollTrigger.refresh(); };
   document.readyState === "complete" ? refresh() : window.addEventListener("load", refresh);
+  // zoom / window snapping can change layout without a clean resize: re-measure pins
+  let resizeTimer;
+  window.addEventListener("resize", () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(refresh, 250); });
 })();

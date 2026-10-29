@@ -410,10 +410,12 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; }
 .showcase__title { font-size: clamp(1.5rem, 2.6vw, 2.25rem); letter-spacing: -0.035em; line-height: 1.12; }
 .showcase__desc { color: var(--muted); max-width: 46ch; }
 .showcase__item .btn { margin-top: 10px; }
-.showcase__dots { display: none; }
+.showcase__nav { display: none; }
 
-/* pinned mode — enabled from JS on large screens */
+/* pinned mode — enabled from JS on large screens.
+   Opaque + own layer so nothing behind can ever show through while pinned. */
 .showcase.is-pinned {
+  position: relative; z-index: 2; background: var(--bg-2);
   height: 100vh; display: flex; flex-direction: column; justify-content: center;
   padding-top: calc(var(--header-h) * 0.5);
 }
@@ -426,12 +428,13 @@ h1, h2, h3, h4 { font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; }
 .showcase.is-pinned .showcase__item { grid-area: 1 / 1; padding: 0; background: none; border: 0; border-radius: 0; }
 .showcase.is-pinned .showcase__item > * { margin-inline: 0; }
 .showcase.is-pinned .showcase__thumb { display: none; }
-.showcase.is-pinned .showcase__dots { display: flex; grid-area: 2 / 1; gap: 8px; margin-top: 40px; }
-.showcase__dots span {
-  width: 22px; height: 3px; border-radius: 3px; background: var(--line-2);
-  transition: width 0.5s var(--ease), background-color 0.4s;
+.showcase.is-pinned .showcase__nav { display: flex; flex-wrap: wrap; gap: 6px; grid-area: 2 / 1; margin-top: clamp(20px, 4vh, 40px); }
+.showcase__nav button {
+  padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); font-size: 0.78rem; color: var(--muted);
+  transition: color 0.3s, border-color 0.3s, background-color 0.3s;
 }
-.showcase__dots span.is-active { width: 48px; background: var(--accent-2); }
+.showcase__nav button:hover { color: var(--text); border-color: var(--line-2); }
+.showcase__nav button.is-active { color: var(--text); border-color: rgba(116, 180, 255, 0.5); background: var(--accent-soft); }
 
 /* devices (pure CSS) */
 .showcase__devices {
