@@ -248,7 +248,7 @@
           scrollTrigger: {
             trigger: section,
             start: "top top",
-            end: () => "+=" + window.innerHeight * items.length * 0.9,
+            end: () => "+=" + window.innerHeight * items.length * 0.8,
             pin: true,
             scrub: 0.8,
             refreshPriority: 1,
@@ -428,6 +428,8 @@
     ["Actions", "fa-solid fa-envelope", "Send me an email", () => (window.location.href = `mailto:${EMAIL}`)],
     ["Live projects", "fa-solid fa-arrow-up-right-from-square", "HR Admin Hub", openUrl("https://hr-admin-hub.vercel.app/"), "hr-admin-hub.vercel.app"],
     ["Live projects", "fa-solid fa-arrow-up-right-from-square", "201 File Sorter", openUrl("https://sorter201.vercel.app/"), "sorter201.vercel.app"],
+    ["Live projects", "fa-solid fa-arrow-up-right-from-square", "Lingomate", openUrl("https://lingomate-self.vercel.app/"), "lingomate-self.vercel.app"],
+    ["Live projects", "fa-solid fa-arrow-up-right-from-square", "DiscountPH", openUrl("https://discountph-ten.vercel.app/"), "discountph-ten.vercel.app"],
     ["Live projects", "fa-solid fa-arrow-up-right-from-square", "Realcognita", openUrl("https://www.realcognita.com/"), "realcognita.com"],
     ["Live projects", "fa-solid fa-arrow-up-right-from-square", "Realforma (in development)", openUrl("http://realforma-stg.realcognita.com/"), "realforma-stg.realcognita.com"],
     ["Live projects", "fa-solid fa-arrow-up-right-from-square", "SudsUp — Laundry POS", openUrl("https://laundry-pos-drab.vercel.app/"), "laundry-pos-drab.vercel.app"],
